@@ -3,9 +3,6 @@ import { HeaderPub } from "./HeaderPub";
 
 
 export const PublicLayout = () => {
-
-  const { auth } = useAuth();
-
   return (
     <>
       {/* Cabecera y Navegación Pública*/}
@@ -13,11 +10,6 @@ export const PublicLayout = () => {
 
       {/* Contenido Principal */}
       <section className='layout__content'>
-        {!auth._id ?
-            <Outlet />
-          :
-            <Navigate to="/rsocial" />
-        }
       </section>
     </>
   )

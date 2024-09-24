@@ -1,33 +1,22 @@
-import image from '../../assets/img/image_error404.svg';
 import { Link } from 'react-router-dom';
 import '../../assets/css/error404.css';
 import { useEffect } from 'react';
+import Confetti from 'react-confetti'; // Un paquete de confeti para hacerlo más llamativo
+import image from '../../assets/img/error.jpg';
+
 
 export const Error404 = () => {
-
-  useEffect(() => {
-    // Añadir la clase error al layout
-    document.querySelector('.layout').classList.add('error');
-
-    // Limpiar el DOM: eliminar la clase error cuando se desmonte el componente
-    return () => {
-      document.querySelector('.layout').classList.remove('error');
-    };
-  }, []);
-
   return (
-    <div className="container">
-      <div className="content">
-        <img src={image} className="image" alt="404 Error" />
-        <div className="text-content">
-          <h1 className="title">Algo no salió bien...</h1>
-          <p className="text">
-            La página que intenta abrir no existe. Puede que haya escrito mal la dirección o que la página se haya movido a otra URL. Si cree que se trata de un error, póngase en contacto con servicio técnico al correo support@gmail.com
-          </p>
-          {/* Utiliza Link para enlazar al inicio */}
-          <Link to="/" className="button">Volver a la página de inicio</Link>
-        </div>
-      </div>
+    <div className="error-container">
+      <Confetti /> {/* Añade confeti para darle un toque festivo */}
+      <img src={image} alt="404 Error" className="error-image" />
+      <h1>¡Ups! Parece que te perdiste...</h1>
+      <p className="error-message">
+        La página que buscas no existe. Pero no te preocupes, ¡puedes volver al buen camino!
+      </p>
+      <Link to="/" className="error-button">
+        Volver al inicio
+      </Link>
     </div>
-  )
-}
+  );
+};

@@ -10,7 +10,7 @@ export const Routing = () => {
                 <Route path="/" element={<PublicLayout />}> </Route>
                 <Route path="/rsocial" element={<PrivateLayout />}></Route>
                 <Route path="*" element={<Error404 />} />
-                </Routes>
+            </Routes>
         </BrowserRouter>
     )
 }
