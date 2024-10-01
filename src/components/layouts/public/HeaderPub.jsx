@@ -1,5 +1,4 @@
 import { NavPub } from "./NavPub"
-import PagePrincipal from "./PagePrincipal"
 
 export const HeaderPub = () => {
   return (

@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom";
 import avatar from "../../../assets/img/default.png";
+import useAuth from "../../../hooks/useAuth";
 
 export const NavPriv = () => {
+  // Usamos el hook Auth para tener disponible el objeto del usuario identificado.
+  const { auth } = useAuth();
   return (
     <nav className="navbar__container-lists">
       <ul className="container-lists__menu-list">

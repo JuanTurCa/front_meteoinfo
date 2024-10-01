@@ -21,12 +21,16 @@ export const Routing = () => {
                 </Route>
 
                 {/* Componentes de la ruta privada en rutas anidadas */}
-                <Route path="/rsocial" element={<PrivateLayout />}></Route>
+                <Route path="/rsocial" element={<PrivateLayout />}>
+                    <Route index element={<PagePrincipal />} /> {/* Página principal */}
+                    <Route path='homeprivate' element={<PagePrincipal />} />
+                </Route>
 
                 {/* Ruta para el error 404 */}
                 <Route path="*" element={<Error404 />} />
+
             </Routes>
-            </AuthProvider>
+        </AuthProvider>
         </BrowserRouter>
     )
 }
