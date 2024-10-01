@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import avatar from "../../../assets/img/default.png";
 
 export const NavPriv = () => {
   return (
@@ -29,26 +30,14 @@ export const NavPriv = () => {
       <ul className="container-lists__list-end">
         <li className="list-end__item">
           <div className="img-avatar-nav">
-            {auth.image != "default.png" && (
-              <img
-                src={auth.image}
-                className="container-avatar__img"
-                alt="Foto de perfil"
-              />
-            )}
-            {auth.image == "default.png" && (
               <img
                 src={avatar}
                 className="container-avatar__img"
                 alt="Foto de perfil"
               />
-            )}
           </div>
         </li>
         <li className="list-end__item">
-          <a href="#" className="list-end__link">
-            <span className="list-end__name">{auth.nick}</span>
-          </a>
         </li>
         <li className="list-end__item">
           <NavLink to="/rsocial/ajustes" className="list-end__link">

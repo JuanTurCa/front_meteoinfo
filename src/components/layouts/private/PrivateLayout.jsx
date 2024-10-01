@@ -11,11 +11,7 @@ export const PrivateLayout = () => {
 
         {/* Contenido Principal */}
         <section>
-          {auth._id ?
-            <Outlet />
-            :
-            <Navigate to="/login" />
-          }
+          <Navigate to="/home" />
         </section>
 
         {/* Barra Lateral */}
