@@ -3,7 +3,6 @@ import { PublicLayout } from '../components/layouts/public/PublicLayout';
 import { PrivateLayout } from '../components/layouts/private/PrivateLayout';
 import { Error404 } from '../components/layouts/Error404.jsx';
 import { PagePrincipal } from '../components/layouts/public/PagePrincipal.jsx'
-import { Registro } from '../components/usuarios/Registro.jsx'
 import { LoginRegistro } from '../components/usuarios/LoginRegistro.jsx';
 import { Login } from '../components/usuarios/Login.jsx';
 import { AuthProvider } from '../context/AuthProvider';

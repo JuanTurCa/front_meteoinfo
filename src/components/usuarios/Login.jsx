@@ -112,7 +112,7 @@ export const Login = () => {
                     <button type='submit'>Entrar</button>
 
                     <div className='register-link'>
-                        <p>No tienes cuenta? <a href='#' >Registro</a></p>
+                        <p>¿No tienes cuenta? <a href='/registro' >Registrate</a></p>
                     </div>
                 </form>
             </div>

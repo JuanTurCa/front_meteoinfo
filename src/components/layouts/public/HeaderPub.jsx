@@ -6,7 +6,7 @@ export const HeaderPub = () => {
     <header className="layout__navbar">
       <div className="navbar__header">
         {/* Título */}
-        <a href="#" className="navbar__title">MeteoInfo</a>
+        <a href="/" className="navbar__title">MeteoInfo</a>
       </div>
       {/* El componente de navegación pública */}
       <NavPub />
