@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { HeaderPriv } from "./HeaderPriv"
-import { Sidebar } from "./Sidebar"
+import { Sidebar } from "./SideBar"
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -17,7 +17,7 @@ export const PrivateLayout = () => {
         <HeaderPriv />
 
         {/* Contenido Principal */}
-        <section>
+        <section >
           {auth._id ?
             <Outlet />
             :

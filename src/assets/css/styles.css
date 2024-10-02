@@ -170,6 +170,8 @@ body {
 }
 
 .layout__content_1 {
+  display: flex;
+  justify-content: space-between;
   padding: 40px 0 0 70px;
   grid-area: content;
 
@@ -416,8 +418,5 @@ h2 {
   margin-right: 1rem;
 }
 
-.aside__container{
-  width: 100%;
-  
-}
+
 

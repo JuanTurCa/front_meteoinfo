@@ -6,7 +6,7 @@ import L from "leaflet"; // Importamos leaflet para crear íconos personalizados
 
 const API_KEY = '00477105ca4041c7bb2202511242409'; // Reemplaza con tu clave de WeatherAPI
 
-export const PagePrincipal = () => {
+export const PagePrincipalPriv = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [hoverPosition, setHoverPosition] = useState(null);
   const [debouncedCoords, setDebouncedCoords] = useState(null);
@@ -15,7 +15,7 @@ export const PagePrincipal = () => {
   const [pinPosition, setPinPosition] = useState([4.60971, -74.08175]); // Estado para la posición del pin
   const [mapInstance, setMapInstance] = useState(null); // Instancia del mapa
 
-  // Debouncing: para evitar hacer demasiadas llamadas a la API
+  // Debouncing para evitar hacer demasiadas llamadas a la API
   useEffect(() => {
     if (!hoverPosition) return;
 
@@ -99,13 +99,13 @@ export const PagePrincipal = () => {
   };
 
   return (
-    <div className="layout__content_1">
-      <div className="map_container">
-      <button onClick={handleLocationClick}>Usar mi ubicación actual</button>
+    <div className="layout">
+      <div className="map-container">
+        <button onClick={handleLocationClick}>Usar mi ubicación actual</button>
         <MapContainer 
           center={currentPosition} 
           zoom={mapZoom} 
-          style={{ height: "600px", width: "100%"}} 
+          style={{ height: "100vh", width: "100%"}} 
           whenCreated={setMapInstance}
         >
           <TileLayer
@@ -147,8 +147,14 @@ export const PagePrincipal = () => {
           )}
         </MapContainer>
       </div>
+
+      {/* Recuadro a la derecha */}
+      <div className="sidebar">
+        <h2>Panel de Información</h2>
+        <p>Aquí puedes añadir más componentes o información relevante.</p>
+      </div>
     </div>
   );
 };
 
-export default PagePrincipal;
+export default PagePrincipalPriv;

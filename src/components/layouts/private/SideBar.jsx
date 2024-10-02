@@ -8,7 +8,7 @@ export const Sidebar = () => {
   }
 
   return (
-    <aside className="layout__aside">
+    <aside className="layout__content_1">
       <header className="aside__header">
         <h1 className="aside__title">Hola, MeteoInfo</h1>
       </header>
