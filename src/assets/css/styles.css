@@ -49,6 +49,7 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: var(--color-general-text);
   background: url('../img/imageback.jpg') no-repeat center center/cover;
+  background-size: cover;
 }
 
 .layout {
@@ -90,24 +91,62 @@ body {
 
 .navbar__container-lists {
   display: flex;
+  justify-content: flex-end; /* Alinea todo el contenido del nav hacia la derecha */
+  width: 100%;
   align-items: center;
 }
 
 .container-lists__menu-list {
   display: flex;
-  gap: 1.5rem; /* Espacio entre enlaces */
+  margin-right: auto; /* Empuja los elementos hacia la izquierda */
+  list-style: none;
+  gap: 1.5rem; /* Añade espacio entre los elementos */
 }
 
-.menu-list__item {
+.container-lists__list-end {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.img-avatar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+.menu-list__item{
   display: inline-block;
+}
+
+.menu-list__link, .list-end__link {
+  color: white;
+  font-size: 1.4rem;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.menu-list__link:hover, .list-end__link:hover {
+  background-color: var(--color-hover-navbar);
 }
 
 .menu-list__link {
   color: var(--color-text-navbar);
   font-size: 1.4rem;
-  padding: 0.5rem 1rem;
+  padding: 1.8rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
+}
+
+.menu-list__title{
+  padding: 0.5rem;
 }
 
 .menu-list__link:hover {
@@ -123,9 +162,11 @@ body {
 
 /* CONTENIDO */
 .layout__content {
-  padding: 40px 0 0 38%;
-  grid-area: content;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  padding: 0;
 }
 
 .layout__content_1 {
@@ -150,10 +191,9 @@ body {
 .content__button {
   background-color: var(--color-background-btn-success);
   border: 1px solid var(--color-border-btn-success);
-  padding: 1rem 2rem;
-  border-radius: 0.4rem;
-  cursor: pointer;
-  font-size: 1.4rem;
+  padding: 1.2rem 2.5rem; /* Aumentar el padding */
+  border-radius: 0.5rem; /* Redondear más los bordes */
+  font-size: 1.6rem; /* Aumentar el tamaño de la fuente */
   transition: background-color 0.3s ease;
 }
 
@@ -224,9 +264,29 @@ body {
   margin-right: 1.5rem;
 }
 
+.list-end__link {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.list-end__link i {
+  margin-right: 0.5rem;
+}
+
+.list-end__link:hover {
+  background-color: var(--color-hover-navbar);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
 .container-avatar__img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /* MAPA */

@@ -5,7 +5,9 @@ import useAuth from '../../../hooks/useAuth';
 
 
 export const PrivateLayout = () => {
+
   const { auth, loading } = useAuth();
+
   if (loading) {
     return <h1>Cargando...</h1>
   } else {
@@ -15,7 +17,7 @@ export const PrivateLayout = () => {
         <HeaderPriv />
 
         {/* Contenido Principal */}
-        <section className='layout__content'>
+        <section>
           {auth._id ?
             <Outlet />
             :

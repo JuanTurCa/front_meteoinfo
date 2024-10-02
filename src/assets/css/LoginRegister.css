@@ -102,3 +102,37 @@ form .register-link {
     background: url('../img/imageback.jpg') no-repeat center center/cover;
 }
 
+/* Estilos específicos para el formulario del Config */
+.config-wrapper {
+    width: 600px; /* Aumenta el ancho del formulario */
+    height: auto; /* Permite que el contenido defina la altura */
+    padding: 40px; /* Agrega más espacio alrededor */
+  }
+  
+  .config-wrapper .form-box {
+    width: 100%; /* Asegúrate de que ocupe todo el espacio disponible */
+  }
+  
+  .config-wrapper h1 {
+    font-size: 32px; /* Ajusta el tamaño del título */
+  }
+  
+  .config-wrapper .input-box {
+    width: 90%; /* Aumenta el ancho de los campos de entrada */
+    height: 40px; /* Ajusta la altura */
+    margin: 20 0 0 0; /* Ajusta el margen entre los campos */
+  }
+  
+  .config-wrapper .input-box input {
+    font-size: 18px; /* Ajusta el tamaño del texto de entrada */
+    padding: 10px 20px; /* Aumenta el padding */
+  }
+  
+  .config-wrapper button {
+    width: 90%; /* Asegúrate de que el botón sea más grande */
+    height: 50px; /* Aumenta la altura del botón */
+    font-size: 18px; /* Aumenta el tamaño del texto del botón */
+    margin-top: 20px; /* Agrega espacio encima del botón */
+  }
+  
+

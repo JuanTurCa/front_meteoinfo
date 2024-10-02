@@ -48,6 +48,9 @@ export const AuthProvider = ({ children }) => {
 
     const data = await request.json();
 
+    // Setear el estado de Auth
+    setAuth(data.user);
+
     // Setear el estado de loading
     setLoading(false);
   }
@@ -59,8 +62,6 @@ export const AuthProvider = ({ children }) => {
         // Valores que se comparten a través del contexto
         auth,
         setAuth,
-        counters,
-        setCounters,
         loading
       }}
     >

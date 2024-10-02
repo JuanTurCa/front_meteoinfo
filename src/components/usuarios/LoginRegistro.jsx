@@ -9,8 +9,6 @@ import { useNavigate } from "react-router-dom";
 import { Global } from "../../helpers/Global";
 
 export const LoginRegistro = () => {
-    //Accion de movimiento entre login y registro
-    const [action, setAction] = useState('');
     // Usamos el hook personalizado useForm para cargar los datos del formulario
     const { form, changed } = useForm({});
     // Estado para mostrar resultado del registro del user
@@ -93,12 +91,12 @@ export const LoginRegistro = () => {
                         <input
                         placeholder='Nombre'
                         type='text'
-                        id='Nombre'
+                        id='name'
                         name='name'
                         required
                         onChange={changed}
                         value={form.name || ''}
-                        autoComplete='Given-name'
+                        autoComplete='given-name'
                         /><FaUserAstronaut className='icon'/>
                     </div>
                     <div className='input-box'>
