@@ -365,5 +365,59 @@ h2 {
 }
 
 .map_container {
-  padding: 50px 50px 0 -50px;
+  padding: 0 60% 0 0;
 }
+
+/* Contenedor general para organizar el mapa y el sidebar */
+.layout-container {
+  display: flex;
+  grid-area: content;
+  padding: 0 1.5rem;
+  height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+/* Contenedor del mapa */
+.map-container {
+  flex: 3;
+  height: 600px; /* Ajusta la altura según sea necesario */
+  margin-right: 50%;
+}
+
+/* Contenedor del sidebar */
+.sidebar-container {
+  flex: 1;
+  height: 600px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Para darle un poco de sombra */
+}
+
+/*Aside Sidebar*/
+.layout__aside{
+  grid-area: aside;
+  margin-right: 2rem;
+}
+
+.aside__header{
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-headers);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Centrar horizontalmente */
+}
+
+.content__title, .aside__title{
+  font-size: 3.5rem;
+  margin-right: 1rem;
+}
+
+.aside__container{
+  width: 100%;
+  
+}
+

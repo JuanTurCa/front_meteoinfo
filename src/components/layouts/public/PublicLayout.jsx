@@ -10,7 +10,7 @@ export const PublicLayout = () => {
       <HeaderPub />
 
       {/* Contenido Principal */}
-      <section>
+      <section className='layout__content'>
         {!auth._id ?
             <Outlet />
           :
