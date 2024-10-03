@@ -102,10 +102,10 @@ export const PagePrincipal = () => {
     <div className="layout__content_1">
       <div className="map_container">
       <button onClick={handleLocationClick}>Usar mi ubicación actual</button>
-        <MapContainer 
-          center={currentPosition} 
-          zoom={mapZoom} 
-          style={{ height: "600px", width: "100%"}} 
+        <MapContainer
+          center={currentPosition}
+          zoom={mapZoom}
+          style={{ height: "600px", width: "400%"}}
           whenCreated={setMapInstance}
         >
           <TileLayer

@@ -53,15 +53,9 @@ body {
 }
 
 .layout {
-  display: grid;
-  grid-template-areas:
-    "nav nav "
-    "content aside";
-  grid-template-rows: 60px auto auto;
-  grid-template-columns: 70% 30%;
+  display: flex;
+  height: 100vh;
   width: 100%;
-  height: 100%;
-  max-height: 80rem;
 }
 
 .navbar__title{
@@ -380,19 +374,17 @@ h2 {
 
 /* Contenedor del mapa */
 .map-container {
-  flex: 3;
-  height: 600px; /* Ajusta la altura según sea necesario */
-  margin-right: 50%;
+  flex: 70%; /* El mapa ocupa el 70% del ancho */
+  height: 100%; /* Asegura que ocupe toda la altura */
 }
 
 /* Contenedor del sidebar */
 .sidebar-container {
-  flex: 1;
-  height: 600px;
-  background-color: white;
-  border-radius: 10px;
+  flex: 30%; /* El recuadro de información ocupa el 30% */
+  background-color: #f4f4f4;
   padding: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Para darle un poco de sombra */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar el panel */
+  overflow-y: auto; /* Para manejar contenido largo */
 }
 
 /*Aside Sidebar*/
