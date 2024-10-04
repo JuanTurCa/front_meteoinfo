@@ -1,6 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { HeaderPriv } from "./HeaderPriv"
-import { Sidebar } from "./SideBar"
 import useAuth from '../../../hooks/useAuth';
 
 
@@ -24,9 +23,6 @@ export const PrivateLayout = () => {
             <Navigate to="/home" />
           }
         </section>
-
-        {/* Barra Lateral */}
-        <Sidebar />
       </>
     );
   }

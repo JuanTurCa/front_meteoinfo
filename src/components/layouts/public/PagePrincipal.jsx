@@ -1,5 +1,5 @@
 import "leaflet/dist/leaflet.css";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents, useMap } from "react-leaflet";
+import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import L from "leaflet"; // Importamos leaflet para crear íconos personalizados
@@ -46,17 +46,6 @@ export const PagePrincipal = () => {
     fetchWeatherData(debouncedCoords.lat, debouncedCoords.lon);
   }, [debouncedCoords]);
 
-  // Hook personalizado para centrar el mapa solo cuando se presione el botón
-  function UpdateMapCenter({ position, zoomLevel }) {
-    const map = useMap();
-    useEffect(() => {
-      if (position) {
-        map.setView(position, zoomLevel);
-      }
-    }, [position, zoomLevel, map]);
-    return null;
-  }
-
   // Maneja los eventos del mapa, incluyendo el clic para mover el pin
   const MapEvents = () => {
     useMapEvents({
@@ -88,6 +77,11 @@ export const PagePrincipal = () => {
           setCurrentPosition([latitude, longitude]);
           setPinPosition([latitude, longitude]); // Coloca el pin en la ubicación actual
           setMapZoom(12); // Actualizamos el zoom automáticamente cuando obtenemos la ubicación actual
+
+          // Solo centra el mapa y hace zoom una vez al presionar el botón
+          if (mapInstance) {
+            mapInstance.setView([latitude, longitude], 12); // Centra el mapa en la nueva ubicación con zoom
+          }
         },
         (error) => {
           console.error("Error obteniendo la geolocalización:", error);
@@ -100,19 +94,21 @@ export const PagePrincipal = () => {
 
   return (
     <div className="layout__content_1">
-      <div className="map_container">
+      <h2>MeteoInfo</h2>
       <button onClick={handleLocationClick}>Usar mi ubicación actual</button>
-        <MapContainer
-          center={currentPosition}
-          zoom={mapZoom}
-          style={{ height: "600px", width: "400%"}}
+      <div className="map_container" style={{ width: '100%', height: '600px' }}> {/* Ajustamos el tamaño a 100% de ancho */}
+        <MapContainer 
+          center={currentPosition} 
+          zoom={mapZoom} 
+          style={{ height: "100%", width: "100%"}}
           whenCreated={setMapInstance}
+          scrollWheelZoom={true} // Habilitamos el zoom con la rueda del ratón
+          dragging={true}       // Permite arrastrar el mapa
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
-          <UpdateMapCenter position={currentPosition} zoomLevel={mapZoom} />
           <MapEvents />
 
           {/* Marcador para la posición del pin */}
@@ -136,6 +132,8 @@ export const PagePrincipal = () => {
                   <h3 style={{ fontSize: "22px", fontWeight: "bold" }}>{weatherData.location.name}</h3>
                   <p><strong>Temperatura:</strong> {weatherData.current.temp_c}°C</p>
                   <p><strong>Condiciones:</strong> {weatherData.current.condition.text}</p>
+                  <p><strong>Latitud:</strong> {hoverPosition.lat}</p>
+                  <p><strong>Longitud:</strong> {hoverPosition.lon}</p>
                   <img
                     src={weatherData.current.condition.icon}
                     alt="weather icon"
