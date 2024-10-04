@@ -14,7 +14,7 @@ export const PublicLayout = () => {
         {!auth._id ?
             <Outlet />
           :
-            <Navigate to="/rsocial" />
+            <Navigate to="/map" />
         }
       </section>
     </>

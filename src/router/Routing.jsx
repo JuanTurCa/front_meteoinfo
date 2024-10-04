@@ -25,7 +25,7 @@ export const Routing = () => {
                 </Route>
 
                 {/* Componentes de la ruta privada en rutas anidadas */}
-                <Route path="/rsocial" element={<PrivateLayout />}>
+                <Route path="/map" element={<PrivateLayout />}>
                     <Route index element={<PagePrincipalPriv />} /> {/* Página principal */}
                     <Route path='homeprivate' element={<PagePrincipalPriv />} />
                     <Route path='logout' element={<Logout />} />

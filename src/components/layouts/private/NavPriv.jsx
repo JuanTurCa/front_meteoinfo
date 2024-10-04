@@ -10,21 +10,9 @@ export const NavPriv = () => {
       {/* Menú principal */}
       <ul className="container-lists__menu-list">
         <li className="menu-list__item">
-          <NavLink to="/rsocial" className="menu-list__link">
+          <NavLink to="/map" className="menu-list__link">
             <i className="fa-solid fa-house"></i>
             <span className="menu-list__title">Inicio</span>
-          </NavLink>
-        </li>
-        <li className="menu-list__item">
-          <NavLink to="/rsocial/feed" className="menu-list__link">
-            <i className="fa-solid fa-list"></i>
-            <span className="menu-list__title">Timeline</span>
-          </NavLink>
-        </li>
-        <li className="menu-list__item">
-          <NavLink to="/rsocial/gente" className="menu-list__link">
-            <i className="fa-solid fa-users"></i>
-            <span className="menu-list__title">Gente</span>
           </NavLink>
         </li>
       </ul>
@@ -57,12 +45,12 @@ export const NavPriv = () => {
           </a>
         </li>
         <li>
-          <NavLink to="/rsocial/ajustes" className="list-end__link">
+          <NavLink to="/map/ajustes" className="list-end__link">
             <span >Ajustes</span>
           </NavLink>
         </li>
         <li>
-          <NavLink to="/rsocial/logout" className="list-end__link">
+          <NavLink to="/map/logout" className="list-end__link">
             <span>Cerrar sesión</span>
           </NavLink>
         </li>
